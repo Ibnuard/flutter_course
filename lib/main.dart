@@ -41,54 +41,68 @@ class Home extends StatelessWidget {
       ),
       body: Center(
         child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
             color: const Color.fromARGB(255, 226, 226, 226),
-            padding: const EdgeInsets.all(12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               mainAxisSize: MainAxisSize.max,
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Icon(Icons.call, size: 32, color: Colors.blueAccent),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      "CALL",
-                      style: TextStyle(color: Colors.blueAccent),
-                    ),
-                  ],
+              children: const [
+                IconWithLabel(
+                  icon: Icons.call,
+                  label: "Call",
+                  iconColor: Colors.blue,
+                  textColor: Colors.blue,
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Icon(Icons.send, size: 32, color: Colors.blueAccent),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      "SEND",
-                      style: TextStyle(color: Colors.blueAccent),
-                    ),
-                  ],
+                IconWithLabel(
+                  icon: Icons.send,
+                  label: "Send",
+                  iconColor: Colors.blue,
+                  textColor: Colors.blue,
                 ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: const [
-                    Icon(Icons.share, size: 32, color: Colors.blueAccent),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      "SHARE",
-                      style: TextStyle(color: Colors.blueAccent),
-                    ),
-                  ],
+                IconWithLabel(
+                  icon: Icons.share,
+                  label: "Share",
+                  iconColor: Colors.blue,
+                  textColor: Colors.blue,
                 ),
               ],
             )),
       ),
+    );
+  }
+}
+
+class IconWithLabel extends StatelessWidget {
+  const IconWithLabel({
+    Key? key,
+    @required this.icon,
+    required this.label,
+    @required this.iconColor,
+    @required this.textColor,
+  }) : super(key: key);
+
+  final IconData? icon;
+  final String label;
+  final Color? iconColor, textColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(
+          icon,
+          size: 32,
+          color: iconColor,
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        Text(
+          label,
+          style: TextStyle(color: textColor),
+        ),
+      ],
     );
   }
 }
