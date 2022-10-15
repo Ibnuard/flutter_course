@@ -25,43 +25,70 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.cyan,
-          title: const Text(
-            "Halo Flutter",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+      appBar: AppBar(
+        backgroundColor: Colors.cyan,
+        title: const Text(
+          "Halo Flutter",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
           ),
-          actions: const [
-            Icon(Icons.access_time),
-            Icon(Icons.grade),
-          ],
         ),
-        body: Container(
-          color: Colors.blue,
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  const Text("Halo ini teks 2"),
-                  const Icon(Icons.access_time_filled_outlined),
-                ],
-              ),
-              const Text("Halo ini teks kebawah")
-            ],
-          ),
-        )
-        // body: Container(
-        //   color: Colors.blue,
-        //   padding: const EdgeInsets.all(24),
-        //   child: const Icon(Icons.ac_unit),
-        // ),
-        );
+        actions: const [
+          Icon(Icons.access_time),
+          Icon(Icons.grade),
+        ],
+      ),
+      body: Center(
+        child: Container(
+            color: const Color.fromARGB(255, 226, 226, 226),
+            padding: const EdgeInsets.all(12),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.call, size: 32, color: Colors.blueAccent),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      "CALL",
+                      style: TextStyle(color: Colors.blueAccent),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.send, size: 32, color: Colors.blueAccent),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      "SEND",
+                      style: TextStyle(color: Colors.blueAccent),
+                    ),
+                  ],
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: const [
+                    Icon(Icons.share, size: 32, color: Colors.blueAccent),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      "SHARE",
+                      style: TextStyle(color: Colors.blueAccent),
+                    ),
+                  ],
+                ),
+              ],
+            )),
+      ),
+    );
   }
 }
